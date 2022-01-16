@@ -2,9 +2,10 @@ package main
 
 import (
 	"log"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/nazeemnato/gradient-avatar/src/routes"
+	"github.com/nazeemnato/gas/src/routes"
 )
 
 func  main() {

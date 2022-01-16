@@ -1,4 +1,4 @@
-module github.com/nazeemnato/gradient-avatar
+module github.com/nazeemnato/gas
 
 go 1.17
 

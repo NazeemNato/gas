@@ -4,7 +4,7 @@ import (
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/nazeemnato/gradient-avatar/src/utils"
+	"github.com/nazeemnato/gas/src/utils"
 )
 
 func AvatarController(c *fiber.Ctx) error {
@@ -27,13 +27,13 @@ func AvatarController(c *fiber.Ctx) error {
 		// if empty we set size to default 200px width and height
 		s = "200"
 	}
-	if _, err := strconv.ParseInt(s,10,64); err  != nil {
+	if _, err := strconv.ParseInt(s, 10, 64); err != nil {
 		return c.Status(400).JSON(fiber.Map{
 			"error": "size must be a number",
 		})
 	}
 	// checking if size is less than 100px
-	if sInt, _ := strconv.ParseInt(s,10,64); sInt >= 2000 {
+	if sInt, _ := strconv.ParseInt(s, 10, 64); sInt >= 2000 {
 		return c.Status(400).JSON(fiber.Map{
 			"error": "size must be lesstan than 2000px",
 		})

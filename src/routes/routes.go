@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/nazeemnato/gradient-avatar/src/controllers"
+	"github.com/nazeemnato/gas/src/controllers"
 )
 
 func Setup(app *fiber.App) {
