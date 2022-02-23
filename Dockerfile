@@ -1,4 +1,4 @@
-FROM go:1.17.5 as build
+FROM golang:1.17-alpine as build
 
 WORKDIR /go/src/github.com/nazeemnato/gas
 
