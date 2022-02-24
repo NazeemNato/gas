@@ -6,7 +6,6 @@ WORKDIR /go/src/gas
 # Copy all the Code and stuff to compile everything
 COPY . .
 
-RUN go mod init
 
 RUN go mod download
 ENV CGO_ENABLED=0
