@@ -1,19 +1,23 @@
-FROM golang:1.17-alpine as build
+# Building the binary of the App
+FROM golang:1.17 AS build
 
-WORKDIR /go/src/github.com/nazeemnato/gas
+WORKDIR /go/src/gas
 
+# Copy all the Code and stuff to compile everything
 COPY . .
 
 RUN go mod download
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o gas main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o app .
+
 
 FROM alpine:latest
 
 WORKDIR /app
 
-COPY --from=build /go/src/github.com/nazeemnato/gas .
+COPY --from=build /go/src/gas/main .
 
-EXPOSE 7854
+# Exposes port 3000 because our program listens on that port
+EXPOSE 3000
 
 CMD ["./main"]
